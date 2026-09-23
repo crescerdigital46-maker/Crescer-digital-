@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Crescer Digital — cursos de marketing digital, empreendedorismo, investimentos, vendas e negócios online.">
+<meta name="theme-color" content="#070b1c">
+<title>Crescer Digital | Cursos e Formação Digital</title>
+<style>
+:root{
+ --bg:#050916;--bg2:#080f24;--panel:#0d1730;--panel2:#101d3d;
+ --text:#f7f8ff;--muted:#aeb7cd;--purple:#7547ff;--purple2:#a477ff;
+ --green:#35d39a;--gold:#ffd166;--line:rgba(255,255,255,.09);
+ --shadow:0 24px 70px rgba(0,0,0,.38);--radius:20px
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+a{text-decoration:none;color:inherit}button,input,textarea{font:inherit}
+.container{width:min(1180px,92%);margin:auto}
+header{position:sticky;top:0;z-index:100;background:rgba(5,9,22,.92);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+.nav{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:.5px}
+.logo-mark{width:44px;height:44px;border-radius:13px;background:linear-gradient(135deg,var(--purple),#4b20c9);display:grid;place-items:center;font-size:23px;box-shadow:0 12px 30px rgba(117,71,255,.25)}
+.logo small{display:block;font-size:10px;letter-spacing:2px;color:#b9bfd0}
+.menu{display:flex;align-items:center;gap:22px;color:#dfe3ef;font-size:14px}
+.menu a:hover{color:var(--purple2)}
+.mobile-btn{display:none;background:none;border:0;color:white;font-size:28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;border:0;cursor:pointer;padding:13px 20px;border-radius:11px;font-weight:800;color:#fff;background:linear-gradient(135deg,var(--purple),#5d31e8);box-shadow:0 12px 30px rgba(117,71,255,.25);transition:.2s}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.08)}
+.btn-outline{background:transparent;border:1px solid #7950ff;box-shadow:none}
+.btn-green{background:linear-gradient(135deg,#19ad7c,#35d39a)}
+.hero{padding:88px 0 75px;background:radial-gradient(circle at 80% 30%,rgba(117,71,255,.28),transparent 35%),linear-gradient(180deg,#07102b,#050916)}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}
+.eyebrow,.badge{color:#b18bff;font-weight:800;text-transform:uppercase;letter-spacing:1.6px;font-size:11px}
+.eyebrow{margin-bottom:17px}
+h1{font-size:clamp(43px,6vw,70px);line-height:1.02;margin-bottom:22px}
+h1 span{color:#8d5cff}
+.hero p{font-size:19px;color:var(--muted);max-width:620px;margin-bottom:30px}
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+.hero-art{border:1px solid var(--line);border-radius:25px;overflow:hidden;background:#080e20;box-shadow:var(--shadow)}
+.hero-art img{width:100%;display:block}
+.trust{padding:18px 0;background:#070d1f;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.trust-row{display:flex;justify-content:center;gap:35px;flex-wrap:wrap;color:#aeb7cd;font-size:13px}
+.trust-row b{color:#fff}
+section{padding:85px 0}
+.dark{background:var(--bg2)}
+.section-head{text-align:center;max-width:760px;margin:0 auto 44px}
+.section-head h2{font-size:38px;line-height:1.15;margin:8px 0 10px}
+.section-head p{color:var(--muted)}
+.badge{display:inline-flex;padding:6px 10px;border-radius:999px;background:rgba(117,71,255,.14);border:1px solid rgba(117,71,255,.18)}
+.courses{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.course{display:flex;flex-direction:column;background:linear-gradient(180deg,#101c3c,#091126);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:.25s;box-shadow:0 12px 35px rgba(0,0,0,.16)}
+.course:hover{transform:translateY(-6px);border-color:#7045ec}
+.course-top{padding:25px;background:linear-gradient(135deg,rgba(117,71,255,.2),rgba(117,71,255,.025))}
+.course-icon{width:58px;height:58px;border-radius:16px;background:rgba(117,71,255,.18);display:grid;place-items:center;font-size:27px;margin-bottom:17px}
+.course h3{font-size:21px;margin:10px 0 8px}.course p{color:var(--muted);font-size:14px}
+.course-body{padding:21px;display:flex;flex-direction:column;flex:1}
+.course-meta{display:flex;justify-content:space-between;gap:8px;color:#c9d0e2;font-size:12px;margin:0 0 18px}
+.course-actions{display:flex;gap:9px;margin-top:auto}.course-actions .btn{flex:1;padding:11px 10px;font-size:13px}
+.learning{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.learning-card{background:#0b142b;border:1px solid var(--line);border-radius:18px;padding:25px}
+.learning-card h3{font-size:19px;margin:10px 0}.learning-card p{color:var(--muted);font-size:14px}
+.feature-list{display:grid;gap:12px;margin-top:18px}.feature{display:flex;gap:12px;align-items:flex-start}.feature-icon{width:34px;height:34px;flex:none;border-radius:10px;background:rgba(117,71,255,.15);display:grid;place-items:center;color:#b18bff}.feature strong{display:block;font-size:14px}.feature span{display:block;color:var(--muted);font-size:13px}
+.modules{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.module{background:#0b1329;border:1px solid var(--line);padding:21px;border-radius:16px}
+.module h3{font-size:17px;margin-bottom:7px}.module p{color:var(--muted);font-size:13px;margin-bottom:12px}
+.lesson{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:11px 0;border-top:1px solid var(--line);font-size:13px}
+.lesson span{color:#cbd1df}.lesson button{border:0;background:none;color:#a879ff;cursor:pointer;font-weight:800}
+.area{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:stretch}
+.dashboard{background:linear-gradient(180deg,#101b3a,#081126);border:1px solid var(--line);border-radius:22px;padding:25px;box-shadow:var(--shadow)}
+.dash-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}.avatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--purple),#3820a0);display:grid;place-items:center;font-weight:900}
+.progress-card{padding:16px;border:1px solid var(--line);background:#0a132b;border-radius:15px;margin-bottom:11px}
+.progress-row{display:flex;justify-content:space-between;gap:10px;margin-bottom:8px;font-size:13px}.progress-row span{color:var(--muted)}
+.progress{height:7px;background:#18223d;border-radius:20px;overflow:hidden}.progress i{display:block;height:100%;background:linear-gradient(90deg,var(--purple),var(--purple2));border-radius:20px}
+.notice{padding:15px;border:1px solid rgba(117,71,255,.25);background:rgba(117,71,255,.08);border-radius:14px;color:#cfc3ff;font-size:13px}
+.pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.price{background:linear-gradient(180deg,#101b3b,#091126);border:1px solid var(--line);border-radius:20px;padding:27px}
+.price.featured{border-color:#7950ff;box-shadow:0 20px 60px rgba(117,71,255,.18)}
+.price h3{font-size:21px;margin-top:12px}.price .value{font-size:32px;font-weight:900;margin:10px 0}.price .value small{font-size:12px;color:var(--muted);font-weight:500}
+.price ul{list-style:none;display:grid;gap:9px;color:var(--muted);font-size:14px;margin:18px 0 24px}.price li:before{content:"✓";color:#a879ff;font-weight:900;margin-right:9px}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+.contact-card{padding:31px;background:#0b1329;border:1px solid var(--line);border-radius:18px}
+.contact-card h3{margin-bottom:14px}.contact-card p{color:var(--muted);margin-bottom:9px}
+form{display:grid;gap:12px}input,textarea{width:100%;padding:14px 15px;border-radius:10px;border:1px solid var(--line);background:#060b1a;color:#fff;outline:none}input:focus,textarea:focus{border-color:#7950ff}textarea{min-height:125px;resize:vertical}
+.faq{display:grid;gap:10px;max-width:850px;margin:auto}.faq details{background:#0b1329;border:1px solid var(--line);border-radius:14px;padding:17px 19px}.faq summary{cursor:pointer;font-weight:800}.faq p{color:var(--muted);font-size:14px;margin-top:10px}
+.cta{background:radial-gradient(circle at center,rgba(117,71,255,.25),transparent 56%)}
+.cta-box{text-align:center;padding:65px 25px;border:1px solid var(--line);border-radius:24px;background:#0b1228}.cta-box h2{font-size:40px;margin-bottom:12px}.cta-box p{color:var(--muted);max-width:650px;margin:0 auto 25px}
+footer{padding:36px 0;border-top:1px solid var(--line);color:#8f98ae}.footer{display:flex;justify-content:space-between;gap:20px;align-items:center}.social{display:flex;gap:17px}.social a:hover{color:#a879ff}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.78);display:none;align-items:center;justify-content:center;z-index:300;padding:20px}.modal.open{display:flex}
+.modal-box{width:min(500px,100%);background:#0b1329;border:1px solid #6841dc;border-radius:20px;padding:28px;box-shadow:var(--shadow)}.modal-box h2{margin:9px 0}.modal-box p{color:var(--muted);font-size:14px;margin-bottom:18px}.close{float:right;border:0;background:none;color:#fff;font-size:25px;cursor:pointer}
+.toast{position:fixed;right:20px;bottom:20px;background:#101b39;border:1px solid #7045ec;color:#fff;padding:14px 18px;border-radius:12px;display:none;z-index:400;box-shadow:var(--shadow)}.toast.show{display:block}
+@media(max-width:900px){.menu{display:none}.mobile-btn{display:block}.hero-grid,.area,.contact-grid,.learning{grid-template-columns:1fr}.courses,.pricing{grid-template-columns:1fr 1fr}.modules{grid-template-columns:1fr}}
+@media(max-width:560px){.courses,.pricing{grid-template-columns:1fr}.trust-row{gap:14px;justify-content:flex-start}.stats{grid-template-columns:1fr}.footer{flex-direction:column;text-align:center}section{padding:65px 0}.hero{padding-top:55px}h1{font-size:44px}}
+
+.producer-box{max-height:90vh;overflow:auto}
+.producer-panel{width:min(900px,100%);max-height:92vh;overflow:auto}
+.producer-panel label{display:grid;gap:6px;color:#dfe3ef;font-size:13px;font-weight:700;margin-bottom:13px}
+.producer-panel input,.producer-panel textarea{margin:0}
+.admin-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}
+.admin-tab{border:1px solid var(--line);background:#0a132b;color:#dfe3ef;padding:10px 13px;border-radius:10px;cursor:pointer;font-weight:800}
+.admin-tab.active{border-color:#7950ff;background:rgba(117,71,255,.16);color:#fff}
+.admin-tab-content{padding:16px;background:#081126;border:1px solid var(--line);border-radius:15px}
+.admin-editor{padding:15px;border:1px solid var(--line);border-radius:13px;margin-bottom:12px;background:#0b142b}
+.admin-editor h3{margin-bottom:12px}
+.admin-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.admin-actions .btn{flex:1;min-width:150px}
+@media(max-width:560px){.admin-actions .btn{width:100%}}
+
+</style>
+</head>
+<body>
+
+<header>
+<div class="container nav">
+<a class="logo" href="#inicio"><div class="logo-mark">↗</div><div>CRESCER<br><small>DIGITAL</small></div></a>
+<nav class="menu">
+<a href="#inicio">Início</a><a href="#cursos">Cursos</a><a href="#area-aluno">Área do Aluno</a><a href="#sobre">Sobre</a><a href="#faq">FAQ</a><a href="#contato">Contato</a>
+<button class="btn" type="button" onclick="openProducerLogin()">Área do Produtor</button>
+</nav>
+<button class="mobile-btn" onclick="toggleMenu()" aria-label="Abrir menu">☰</button>
+</div>
+</header>
+
+<main>
+<section class="hero" id="inicio">
+<div class="container hero-grid">
+<div>
+<div class="eyebrow">Escola Digital • Negócios • Crescimento</div>
+<h1>Aprenda. <span>Empreenda.</span> Cresça.</h1>
+<p>Cursos e conteúdos para desenvolver suas habilidades em marketing digital, empreendedorismo, vendas, inteligência artificial e educação financeira.</p>
+<div class="actions"><a class="btn" href="#cursos">Ver cursos</a><a class="btn btn-outline" href="#area-aluno">Área do aluno</a></div>
+</div>
+<div class="hero-art"><img src="hero.png" alt="Painel digital da Crescer Digital"></div>
+</div>
+</section>
+
+<div class="trust"><div class="container trust-row"><span>✓ <b>Conteúdo organizado</b></span><span>✓ <b>Aulas por módulos</b></span><span>✓ <b>Aprenda no seu ritmo</b></span><span>✓ <b>Suporte pelo WhatsApp</b></span></div></div>
+
+<section id="cursos">
+<div class="container">
+<div class="section-head"><span class="badge">Catálogo</span><h2>Escolha seu próximo curso</h2><p>Uma área profissional para apresentar seus cursos e receber matrículas diretamente.</p></div>
+<div class="courses">
+<article class="course"><div class="course-top"><div class="course-icon">📱</div><span class="badge">Marketing</span><h3>Marketing Digital</h3><p>Fundamentos, conteúdo, redes sociais, posicionamento e estratégias para crescer no digital.</p></div><div class="course-body"><div class="course-meta"><span>12 módulos</span><span>40 aulas</span><span>Iniciante</span></div><div class="course-actions"><button class="btn" onclick="courseInfo('Marketing Digital')">Ver curso</button><button class="btn btn-outline" onclick="enroll('Marketing Digital')">Matricular</button></div></div></article>
+<article class="course"><div class="course-top"><div class="course-icon">💼</div><span class="badge">Negócios</span><h3>Empreendedorismo</h3><p>Da ideia ao negócio: nicho, planejamento, oferta, posicionamento, vendas e organização.</p></div><div class="course-body"><div class="course-meta"><span>10 módulos</span><span>32 aulas</span><span>Iniciante</span></div><div class="course-actions"><button class="btn" onclick="courseInfo('Empreendedorismo')">Ver curso</button><button class="btn btn-outline" onclick="enroll('Empreendedorismo')">Matricular</button></div></div></article>
+<article class="course"><div class="course-top"><div class="course-icon">📈</div><span class="badge">Finanças</span><h3>Investimentos</h3><p>Educação financeira, risco, diversificação e fundamentos para estudar investimentos com mais segurança.</p></div><div class="course-body"><div class="course-meta"><span>8 módulos</span><span>28 aulas</span><span>Iniciante</span></div><div class="course-actions"><button class="btn" onclick="courseInfo('Investimentos')">Ver curso</button><button class="btn btn-outline" onclick="enroll('Investimentos')">Matricular</button></div></div></article>
+<article class="course"><div class="course-top"><div class="course-icon">🛒</div><span class="badge">Vendas</span><h3>Vendas & E-commerce</h3><p>Ofertas, atendimento, páginas, processos e estratégias para vender produtos e serviços online.</p></div><div class="course-body"><div class="course-meta"><span>9 módulos</span><span>30 aulas</span><span>Prático</span></div><div class="course-actions"><button class="btn" onclick="courseInfo('Vendas & E-commerce')">Ver curso</button><button class="btn btn-outline" onclick="enroll('Vendas & E-commerce')">Matricular</button></div></div></article>
+<article class="course"><div class="course-top"><div class="course-icon">🤖</div><span class="badge">Tecnologia</span><h3>IA para Negócios</h3><p>Produtividade, criação de conteúdo, atendimento e automações com inteligência artificial.</p></div><div class="course-body"><div class="course-meta"><span>6 módulos</span><span>20 aulas</span><span>Prático</span></div><div class="course-actions"><button class="btn" onclick="courseInfo('IA para Negócios')">Ver curso</button><button class="btn btn-outline" onclick="enroll('IA para Negócios')">Matricular</button></div></div></article>
+<article class="course"><div class="course-top"><div class="course-icon">🎯</div><span class="badge">Estratégia</span><h3>Tráfego & Conteúdo</h3><p>Planejamento de campanhas, criativos, conteúdo e leitura de métricas para crescer no digital.</p></div><div class="course-body"><div class="course-meta"><span>7 módulos</span><span>24 aulas</span><span>Intermediário</span></div><div class="course-actions"><button class="btn" onclick="courseInfo('Tráfego & Conteúdo')">Ver curso</button><button class="btn btn-outline" onclick="enroll('Tráfego & Conteúdo')">Matricular</button></div></div></article>
+</div>
+</div>
+</section>
+
+<section class="dark" id="area-aluno">
+<div class="container">
+<div class="section-head"><span class="badge">Área do aluno</span><h2>Uma experiência organizada</h2><p>Estrutura visual para cursos, progresso, aulas e materiais. O login real pode ser conectado ao seu sistema posteriormente.</p></div>
+<div class="area">
+<div class="dashboard">
+<div class="dash-head"><div><strong>Meu aprendizado</strong><div style="color:var(--muted);font-size:13px">Painel de acompanhamento</div></div><div class="avatar">CD</div></div>
+<div class="progress-card"><div class="progress-row"><b>Marketing Digital</b><span>68%</span></div><div class="progress"><i style="width:68%"></i></div></div>
+<div class="progress-card"><div class="progress-row"><b>Empreendedorismo</b><span>35%</span></div><div class="progress"><i style="width:35%"></i></div></div>
+<div class="progress-card"><div class="progress-row"><b>Investimentos</b><span>12%</span></div><div class="progress"><i style="width:12%"></i></div></div>
+<div class="notice">🔐 Para transformar este painel em uma área privada de verdade, será necessário conectar autenticação e banco de dados.</div>
+</div>
+<div class="learning">
+<div class="learning-card"><div class="course-icon">🎓</div><h3>O que o aluno encontra</h3><p>Uma estrutura pensada para acompanhar toda a jornada de aprendizado.</p><div class="feature-list"><div class="feature"><div class="feature-icon">▶</div><div><strong>Aulas</strong><span>Vídeos organizados por módulos.</span></div></div><div class="feature"><div class="feature-icon">📊</div><div><strong>Progresso</strong><span>Acompanhamento de conclusão.</span></div></div><div class="feature"><div class="feature-icon">📄</div><div><strong>Materiais</strong><span>Arquivos e exercícios de apoio.</span></div></div><div class="feature"><div class="feature-icon">📜</div><div><strong>Certificado</strong><span>Estrutura pronta para emissão.</span></div></div></div></div>
+<div class="learning-card"><div class="course-icon">🛠️</div><h3>Configuração de cursos</h3><p>Você poderá organizar cada curso em módulos, aulas, materiais e avaliações.</p><div class="feature-list"><div class="feature"><div class="feature-icon">01</div><div><strong>Módulo</strong><span>Nome e descrição.</span></div></div><div class="feature"><div class="feature-icon">02</div><div><strong>Aulas</strong><span>Vídeo, texto e material.</span></div></div><div class="feature"><div class="feature-icon">03</div><div><strong>Avaliação</strong><span>Questionários e atividades.</span></div></div></div></div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="modulos">
+<div class="container">
+<div class="section-head"><span class="badge">Exemplo de grade</span><h2>Área de módulos e aulas</h2><p>Use esta estrutura para organizar o conteúdo de cada curso.</p></div>
+<div class="modules">
+<div class="module"><h3>01 · Fundamentos do Marketing Digital</h3><p>Base para entender o ambiente digital.</p><div class="lesson"><span>▶ Aula 01 — Introdução</span><button onclick="showToast('Aula disponível após a matrícula.')">Abrir</button></div><div class="lesson"><span>▶ Aula 02 — Público e nicho</span><button onclick="showToast('Aula disponível após a matrícula.')">Abrir</button></div><div class="lesson"><span>📄 Material de apoio</span><button onclick="showToast('Material disponível após a matrícula.')">Abrir</button></div></div>
+<div class="module"><h3>02 · Estratégia e Conteúdo</h3><p>Planejamento para produzir com objetivo.</p><div class="lesson"><span>▶ Aula 01 — Planejamento</span><button onclick="showToast('Aula disponível após a matrícula.')">Abrir</button></div><div class="lesson"><span>▶ Aula 02 — Conteúdo que vende</span><button onclick="showToast('Aula disponível após a matrícula.')">Abrir</button></div><div class="lesson"><span>📝 Exercício prático</span><button onclick="showToast('Exercício disponível após a matrícula.')">Abrir</button></div></div>
+<div class="module"><h3>03 · Empreender no Digital</h3><p>Da ideia à organização do negócio.</p><div class="lesson"><span>▶ Aula 01 — Modelo de negócio</span><button onclick="showToast('Aula disponível após a matrícula.')">Abrir</button></div><div class="lesson"><span>▶ Aula 02 — Oferta</span><button onclick="showToast('Aula disponível após a matrícula.')">Abrir</button></div><div class="lesson"><span>📄 Checklist</span><button onclick="showToast('Checklist disponível após a matrícula.')">Abrir</button></div></div>
+<div class="module"><h3>04 · Educação Financeira</h3><p>Conceitos básicos para estudar finanças.</p><div class="lesson"><span>▶ Aula 01 — Organização financeira</span><button onclick="showToast('Aula disponível após a matrícula.')">Abrir</button></div><div class="lesson"><span>▶ Aula 02 — Risco e diversificação</span><button onclick="showToast('Aula disponível após a matrícula.')">Abrir</button></div><div class="lesson"><span>📄 Material de apoio</span><button onclick="showToast('Material disponível após a matrícula.')">Abrir</button></div></div>
+</div>
+</div>
+</section>
+
+<section class="dark" id="sobre">
+<div class="container learning">
+<div class="learning-card"><span class="badge">Sobre a Crescer Digital</span><h2 style="font-size:38px;line-height:1.15;margin:10px 0 16px">Conhecimento que vira ação.</h2><p>A Crescer Digital reúne educação e estratégias digitais em uma experiência simples, moderna e profissional para quem quer aprender e desenvolver projetos no ambiente digital.</p><div class="feature-list"><div class="feature"><div class="feature-icon">✓</div><div><strong>Conteúdo organizado</strong><span>Cursos divididos em módulos e aulas.</span></div></div><div class="feature"><div class="feature-icon">✓</div><div><strong>Aprendizado prático</strong><span>Materiais e exercícios podem complementar as aulas.</span></div></div><div class="feature"><div class="feature-icon">✓</div><div><strong>Expansão</strong><span>Estrutura preparada para novos cursos.</span></div></div></div></div>
+<div class="learning-card"><span class="badge">Pronto para crescer</span><h3>O site já pode ser usado para divulgação e matrículas</h3><p style="margin-top:10px">Os botões de matrícula direcionam o interessado para o WhatsApp da Crescer Digital com o curso escolhido. Assim você pode começar a captar alunos imediatamente, mesmo antes de conectar pagamentos e login automático.</p><div style="margin-top:20px"><a class="btn btn-green" href="https://wa.me/551533997071969?text=Olá%20Crescer%20Digital!%20Quero%20me%20matricular." target="_blank" rel="noopener">Quero me matricular</a></div></div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<div class="section-head"><span class="badge">Planos de exemplo</span><h2>Apresente seus cursos com clareza</h2><p>Os valores abaixo são exemplos e podem ser alterados antes da publicação.</p></div>
+<div class="pricing">
+<div class="price"><span class="badge">Essencial</span><h3>1 curso</h3><div class="value">R$ 49,90</div><ul><li>Acesso ao curso escolhido</li><li>Módulos e aulas</li><li>Materiais de apoio</li></ul><button class="btn" onclick="enroll('Plano Essencial')">Quero começar</button></div>
+<div class="price featured"><span class="badge">Mais completo</span><h3>Pacote Crescer</h3><div class="value">R$ 99,90</div><ul><li>3 cursos</li><li>Área do aluno</li><li>Materiais e exercícios</li><li>Certificado por curso</li></ul><button class="btn" onclick="enroll('Pacote Crescer')">Quero começar</button></div>
+<div class="price"><span class="badge">Premium</span><h3>Acesso total</h3><div class="value">R$ 149,90</div><ul><li>Todos os cursos</li><li>Área do aluno</li><li>Novos conteúdos</li><li>Certificados</li></ul><button class="btn" onclick="enroll('Plano Premium')">Quero começar</button></div>
+</div>
+</div>
+</section>
+
+
+<section class="dark" id="pagamento">
+  <div class="container">
+    <div class="section-head">
+      <span class="badge">Forma de pagamento</span>
+      <h2>Pagamento via PIX</h2>
+      <p>Para realizar sua matrícula, utilize a chave PIX abaixo.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3>💚 PIX — Crescer Digital</h3>
+        <p><strong>Chave PIX:</strong></p>
+        <div style="padding:15px;margin:12px 0 18px;background:#060b1a;border:1px solid var(--line);border-radius:10px;word-break:break-all;font-size:17px;color:#35d39a;">
+          crescerdigital46@gmail.com
+        </div>
+        <button class="btn btn-green" type="button" onclick="copyPix()">Copiar chave PIX</button>
+        <p style="margin-top:15px;font-size:13px;">Após o pagamento, envie o comprovante pelo WhatsApp para confirmar sua matrícula.</p>
+        <a class="btn" style="margin-top:8px;" href="https://wa.me/551533997071969?text=Olá%20Crescer%20Digital!%20Fiz%20o%20pagamento%20via%20PIX%20e%20vou%20enviar%20o%20comprovante." target="_blank" rel="noopener">Enviar comprovante</a>
+      </div>
+      <div class="contact-card">
+        <h3>Como pagar</h3>
+        <p>1. Copie a chave PIX.</p>
+        <p>2. Abra o aplicativo do seu banco.</p>
+        <p>3. Faça o pagamento para <strong>crescerdigital46@gmail.com</strong>.</p>
+        <p>4. Envie o comprovante pelo WhatsApp.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+<div class="container"><div class="cta-box"><h2>Pronto para começar?</h2><p>Escolha um curso e fale diretamente com a Crescer Digital para receber as informações de matrícula.</p><a class="btn" href="https://wa.me/551533997071969?text=Olá%20Crescer%20Digital!%20Quero%20conhecer%20os%20cursos." target="_blank" rel="noopener">Falar pelo WhatsApp</a></div></div>
+</section>
+
+<section id="faq">
+<div class="container">
+<div class="section-head"><span class="badge">Dúvidas</span><h2>Perguntas frequentes</h2><p>Informações para deixar o site mais completo para seus visitantes.</p></div>
+<div class="faq">
+<details><summary>Como faço minha matrícula?</summary><p>Clique em “Matricular” no curso desejado. O site abre uma conversa no WhatsApp com o nome do curso para facilitar o atendimento.</p></details>
+<details><summary>Os cursos são online?</summary><p>A estrutura foi preparada para cursos online com aulas em módulos. Você pode disponibilizar vídeos, materiais e exercícios depois de conectar sua plataforma de conteúdo.</p></details>
+<details><summary>Como funciona a área do aluno?</summary><p>A interface já está preparada para mostrar cursos, progresso, aulas e materiais. Login, banco de dados e controle de acesso precisam ser conectados a um sistema de backend para funcionar de forma segura.</p></details>
+<details><summary>O curso de investimentos é recomendação financeira?</summary><p>Não. O conteúdo deve ser apresentado como educação financeira. Decisões de investimento dependem do perfil e da situação de cada pessoa.</p></details>
+</div>
+</div>
+</section>
+
+<section id="contato">
+<div class="container">
+<div class="section-head"><h2>Entre em contato</h2><p>Atendimento e informações sobre os cursos da Crescer Digital.</p></div>
+<div class="contact-grid">
+<div class="contact-card"><h3>Crescer Digital</h3><p>📱 WhatsApp: <strong>(15) 3399-7071969</strong></p><p>📸 Instagram: <strong>@na_crescer_digital</strong></p><p>✉️ E-mail: <strong>crescerdigital46@gmail.com</strong></p><br><a class="btn btn-green" href="https://wa.me/551533997071969?text=Olá%20Crescer%20Digital!%20Vim%20pelo%20site." target="_blank" rel="noopener">Chamar no WhatsApp</a></div>
+<div class="contact-card"><h3>Solicite informações</h3><form onsubmit="sendForm(event)"><input id="nome" required placeholder="Seu nome"><input id="email" type="email" required placeholder="Seu melhor e-mail"><textarea id="mensagem" required placeholder="Qual curso você deseja conhecer?"></textarea><button class="btn" type="submit">Enviar pelo WhatsApp</button></form></div>
+</div>
+</div>
+</section>
+</main>
+
+<footer><div class="container footer"><div>© 2026 Crescer Digital. Todos os direitos reservados.</div><div class="social"><a href="#cursos">Cursos</a><a href="#area-aluno">Área do aluno</a><a href="https://instagram.com/na_crescer_digital" target="_blank" rel="noopener">Instagram</a></div></div></footer>
+
+
+<div class="modal" id="producerLogin" onclick="outsideProducerLogin(event)">
+  <div class="modal-box producer-box">
+    <button class="close" onclick="closeProducerLogin()">×</button>
+    <span class="badge">Acesso restrito</span>
+    <h2>Área do Produtor</h2>
+    <p>Entre para editar os textos, cursos, preços e contatos da página.</p>
+    <form onsubmit="producerLogin(event)">
+      <input id="producerPassword" type="password" required placeholder="Senha do produtor" autocomplete="current-password">
+      <button class="btn btn-green" type="submit">Entrar no painel</button>
+    </form>
+    <div class="notice" style="margin-top:14px">Modo atual: painel local. Para proteção real na internet, conecte autenticação e banco de dados no backend.</div>
+  </div>
+</div>
+
+<div class="modal" id="producerPanel" onclick="outsideProducerPanel(event)">
+  <div class="modal-box producer-panel">
+    <button class="close" onclick="closeProducerPanel()">×</button>
+    <span class="badge">Painel do Produtor</span>
+    <h2>Editar sua página</h2>
+    <p>As alterações ficam salvas neste navegador. Depois de publicar o HTML atualizado, você poderá editar novamente pelo painel.</p>
+
+    <div class="admin-tabs">
+      <button type="button" class="admin-tab active" onclick="showAdminTab('geral', this)">Geral</button>
+      <button type="button" class="admin-tab" onclick="showAdminTab('cursosAdmin', this)">Cursos</button>
+      <button type="button" class="admin-tab" onclick="showAdminTab('planosAdmin', this)">Planos</button>
+      <button type="button" class="admin-tab" onclick="showAdminTab('contatoAdmin', this)">Contato</button>
+    </div>
+
+    <div id="geral" class="admin-tab-content">
+      <label>Nome da marca<input id="adminBrand" type="text"></label>
+      <label>Título principal<input id="adminHeroTitle" type="text"></label>
+      <label>Texto principal<textarea id="adminHeroText"></textarea></label>
+      <label>Texto do rodapé<input id="adminFooter" type="text"></label>
+    </div>
+
+    <div id="cursosAdmin" class="admin-tab-content" style="display:none">
+      <div id="courseEditors"></div>
+    </div>
+
+    <div id="planosAdmin" class="admin-tab-content" style="display:none">
+      <div id="planEditors"></div>
+    </div>
+
+    <div id="contatoAdmin" class="admin-tab-content" style="display:none">
+      <label>WhatsApp (somente números, com DDI)<input id="adminWhatsapp" type="text"></label>
+      <label>Instagram<input id="adminInstagram" type="text"></label>
+      <label>E-mail<input id="adminEmail" type="email"></label>
+      <label>Chave PIX<input id="adminPix" type="text" value="crescerdigital46@gmail.com"></label>
+    </div>
+
+    <div class="admin-actions">
+      <button type="button" class="btn btn-green" onclick="saveProducerData()">Salvar alterações</button>
+      <button type="button" class="btn btn-outline" onclick="resetProducerData()">Restaurar padrão</button>
+      <button type="button" class="btn btn-outline" onclick="closeProducerPanel()">Fechar</button>
+    </div>
+    <div id="adminStatus" class="notice" style="margin-top:14px;display:none"></div>
+  </div>
+</div>
+
+<div class="modal" id="courseModal" onclick="outsideClose(event)"><div class="modal-box"><button class="close" onclick="closeModal()">×</button><span class="badge">Curso Crescer Digital</span><h2 id="modalTitle">Curso</h2><p id="modalText"></p><div class="notice">📚 Conteúdo organizado em módulos e aulas. Para matrícula, fale diretamente com a Crescer Digital.</div><button class="btn btn-green" id="modalEnroll">Quero me matricular</button></div></div>
+<div class="toast" id="toast"></div>
+
+<script>
+const WHATSAPP="551533997071969";
+function encodeMessage(text){return encodeURIComponent(text)}
+function enroll(course){
+ const msg=`Olá, Crescer Digital! Tenho interesse em me matricular no curso/plano: ${course}. Vim pelo site.`;
+ window.open(`https://wa.me/${WHATSAPP}?text=${encodeMessage(msg)}`,"_blank");
+}
+function courseInfo(course){
+ const descriptions={
+  "Marketing Digital":"Aprenda fundamentos de marketing, conteúdo, redes sociais, posicionamento e estratégias digitais.",
+  "Empreendedorismo":"Desenvolva uma visão prática sobre nicho, planejamento, oferta, vendas e organização do negócio.",
+  "Investimentos":"Conteúdo de educação financeira sobre conceitos, risco e diversificação para quem quer estudar investimentos.",
+  "Vendas & E-commerce":"Aprenda a estruturar ofertas, atendimento e processos para vender pela internet.",
+  "IA para Negócios":"Explore aplicações de inteligência artificial para produtividade, conteúdo, atendimento e processos.",
+  "Tráfego & Conteúdo":"Conheça fundamentos de campanhas, criativos, conteúdo e análise de métricas."
+ };
+ document.getElementById("modalTitle").textContent=course;
+ document.getElementById("modalText").textContent=descriptions[course]||"Conheça a estrutura do curso e fale conosco para receber as informações.";
+ document.getElementById("modalEnroll").onclick=()=>enroll(course);
+ document.getElementById("courseModal").classList.add("open");
+}
+function closeModal(){document.getElementById("courseModal").classList.remove("open")}
+function outsideClose(e){if(e.target.id==="courseModal")closeModal()}
+function showToast(text){const t=document.getElementById("toast");t.textContent=text;t.classList.add("show");setTimeout(()=>t.classList.remove("show"),3000)}
+function sendForm(e){
+ e.preventDefault();
+ const nome=document.getElementById("nome").value;
+ const email=document.getElementById("email").value;
+ const mensagem=document.getElementById("mensagem").value;
+ const text=`Olá, Crescer Digital! Meu nome é ${nome}. Meu e-mail é ${email}. ${mensagem}`;
+ window.open(`https://wa.me/${WHATSAPP}?text=${encodeMessage(text)}`,"_blank");
+}
+function toggleMenu(){
+ const menu=document.querySelector(".menu");
+ const open=menu.style.display==="flex";
+ menu.style.display=open?"none":"flex";
+ menu.style.position="absolute";menu.style.top="78px";menu.style.left="0";menu.style.right="0";
+ menu.style.padding="20px";menu.style.background="#070d1f";menu.style.flexDirection="column";menu.style.alignItems="stretch";
+}
+
+const PRODUCER_PASSWORD = "123456"; // Demo password for this static HTML. Use real backend auth before public production.
+
+const defaultProducerData = {
+  brand: "CRESCER DIGITAL",
+  heroTitle: "Aprenda. <span>Empreenda.</span> Cresça.",
+  heroText: "Cursos e conteúdos para desenvolver suas habilidades em marketing digital, empreendedorismo, vendas, inteligência artificial e educação financeira.",
+  footer: "© 2026 Crescer Digital. Todos os direitos reservados.",
+  whatsapp: "551533997071969",
+  instagram: "@na_crescer_digital",
+  email: "crescerdigital46@gmail.com",
+  pix: "crescerdigital46@gmail.com",
+  courses: [
+    ["Marketing Digital","Marketing","📱","Fundamentos, conteúdo, redes sociais, posicionamento e estratégias para crescer no digital.","12 módulos","40 aulas","Iniciante"],
+    ["Empreendedorismo","Negócios","💼","Da ideia ao negócio: nicho, planejamento, oferta, posicionamento, vendas e organização.","10 módulos","32 aulas","Iniciante"],
+    ["Investimentos","Finanças","📈","Educação financeira, risco, diversificação e fundamentos para estudar investimentos com mais segurança.","8 módulos","28 aulas","Iniciante"],
+    ["Vendas & E-commerce","Vendas","🛒","Ofertas, atendimento, páginas, processos e estratégias para vender produtos e serviços online.","9 módulos","30 aulas","Prático"],
+    ["IA para Negócios","Tecnologia","🤖","Produtividade, criação de conteúdo, atendimento e automações com inteligência artificial.","6 módulos","20 aulas","Prático"],
+    ["Tráfego & Conteúdo","Estratégia","🎯","Planejamento de campanhas, criativos, conteúdo e leitura de métricas para crescer no digital.","7 módulos","24 aulas","Intermediário"]
+  ],
+  plans: [
+    ["Essencial","1 curso","R$ 49,90",["Acesso ao curso escolhido","Módulos e aulas","Materiais de apoio"]],
+    ["Pacote Crescer","3 cursos","R$ 99,90",["3 cursos","Área do aluno","Materiais e exercícios","Certificado por curso"]],
+    ["Premium","Acesso total","R$ 149,90",["Todos os cursos","Área do aluno","Novos conteúdos","Certificados"]]
+  ]
+};
+
+function getProducerData(){
+  try { return JSON.parse(localStorage.getItem("crescerDigitalProducerData")) || structuredClone(defaultProducerData); }
+  catch(e){ return structuredClone(defaultProducerData); }
+}
+function setValue(id,val){ const el=document.getElementById(id); if(el) el.value=val; }
+function openProducerLogin(){ document.getElementById("producerLogin").classList.add("open"); setTimeout(()=>document.getElementById("producerPassword").focus(),50); }
+function closeProducerLogin(){ document.getElementById("producerLogin").classList.remove("open"); }
+function outsideProducerLogin(e){ if(e.target.id==="producerLogin") closeProducerLogin(); }
+function producerLogin(e){
+  e.preventDefault();
+  const pass=document.getElementById("producerPassword").value;
+  if(pass !== PRODUCER_PASSWORD){ showToast("Senha incorreta."); return; }
+  closeProducerLogin();
+  openProducerPanel();
+  document.getElementById("producerPassword").value="";
+}
+function openProducerPanel(){
+  loadAdminFields();
+  document.getElementById("producerPanel").classList.add("open");
+}
+function closeProducerPanel(){ document.getElementById("producerPanel").classList.remove("open"); }
+function outsideProducerPanel(e){ if(e.target.id==="producerPanel") closeProducerPanel(); }
+
+function showAdminTab(id,btn){
+  document.querySelectorAll(".admin-tab-content").forEach(x=>x.style.display="none");
+  document.querySelectorAll(".admin-tab").forEach(x=>x.classList.remove("active"));
+  document.getElementById(id).style.display="block";
+  if(btn) btn.classList.add("active");
+}
+
+function loadAdminFields(){
+  const d=getProducerData();
+  setValue("adminBrand",d.brand);
+  setValue("adminHeroTitle",d.heroTitle);
+  setValue("adminHeroText",d.heroText);
+  setValue("adminFooter",d.footer);
+  setValue("adminWhatsapp",d.whatsapp);
+  setValue("adminInstagram",d.instagram);
+  setValue("adminEmail",d.email);
+  setValue("adminPix",d.pix || "crescerdigital46@gmail.com");
+
+  document.getElementById("courseEditors").innerHTML=d.courses.map((c,i)=>`
+    <div class="admin-editor">
+      <h3>Curso ${i+1}</h3>
+      <label>Nome<input id="c${i}name" value="${escapeAttr(c[0])}"></label>
+      <label>Categoria<input id="c${i}cat" value="${escapeAttr(c[1])}"></label>
+      <label>Ícone<input id="c${i}icon" value="${escapeAttr(c[2])}"></label>
+      <label>Descrição<textarea id="c${i}desc">${escapeHtml(c[3])}</textarea></label>
+      <label>Módulos<input id="c${i}mod" value="${escapeAttr(c[4])}"></label>
+      <label>Aulas<input id="c${i}less" value="${escapeAttr(c[5])}"></label>
+      <label>Nível<input id="c${i}level" value="${escapeAttr(c[6])}"></label>
+    </div>`).join("");
+
+  document.getElementById("planEditors").innerHTML=d.plans.map((p,i)=>`
+    <div class="admin-editor">
+      <h3>Plano ${i+1}</h3>
+      <label>Nome<input id="p${i}name" value="${escapeAttr(p[0])}"></label>
+      <label>Subtítulo<input id="p${i}sub" value="${escapeAttr(p[1])}"></label>
+      <label>Preço<input id="p${i}price" value="${escapeAttr(p[2])}"></label>
+      <label>Benefícios (um por linha)<textarea id="p${i}features">${escapeHtml(p[3].join("\n"))}</textarea></label>
+    </div>`).join("");
+}
+function escapeAttr(s){ return String(s).replace(/&/g,"&amp;").replace(/"/g,"&quot;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
+function escapeHtml(s){ return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
+
+function saveProducerData(){
+  const d=getProducerData();
+  d.brand=document.getElementById("adminBrand").value;
+  d.heroTitle=document.getElementById("adminHeroTitle").value;
+  d.heroText=document.getElementById("adminHeroText").value;
+  d.footer=document.getElementById("adminFooter").value;
+  d.whatsapp=document.getElementById("adminWhatsapp").value.replace(/\D/g,"");
+  d.instagram=document.getElementById("adminInstagram").value;
+  d.email=document.getElementById("adminEmail").value;
+  d.pix=document.getElementById("adminPix").value.trim();
+
+  d.courses=d.courses.map((_,i)=>[
+    document.getElementById(`c${i}name`).value,
+    document.getElementById(`c${i}cat`).value,
+    document.getElementById(`c${i}icon`).value,
+    document.getElementById(`c${i}desc`).value,
+    document.getElementById(`c${i}mod`).value,
+    document.getElementById(`c${i}less`).value,
+    document.getElementById(`c${i}level`).value
+  ]);
+  d.plans=d.plans.map((_,i)=>[
+    document.getElementById(`p${i}name`).value,
+    document.getElementById(`p${i}sub`).value,
+    document.getElementById(`p${i}price`).value,
+    document.getElementById(`p${i}features`).value.split("\n").map(x=>x.trim()).filter(Boolean)
+  ]);
+
+  localStorage.setItem("crescerDigitalProducerData",JSON.stringify(d));
+  applyProducerData();
+  const status=document.getElementById("adminStatus");
+  status.textContent="Alterações salvas neste navegador.";
+  status.style.display="block";
+  setTimeout(()=>status.style.display="none",3000);
+}
+
+function resetProducerData(){
+  if(!confirm("Restaurar todos os textos, cursos e preços para o padrão?")) return;
+  localStorage.removeItem("crescerDigitalProducerData");
+  loadAdminFields();
+  applyProducerData();
+  showToast("Dados restaurados.");
+}
+
+
+function copyPix(){
+  const pix = (getProducerData().pix || "crescerdigital46@gmail.com").trim();
+  navigator.clipboard.writeText(pix).then(
+    ()=>showToast("Chave PIX copiada!"),
+    ()=>showToast("Chave PIX: "+pix)
+  );
+}
+
+function applyProducerData(){
+  const d=getProducerData();
+  const logo=document.querySelector(".logo div:nth-child(2)");
+  if(logo) logo.innerHTML=d.brand.replace(/\s+/,"<br><small>") + (d.brand.includes(" ") ? "</small>" : "");
+  const heroH=document.querySelector("#inicio h1");
+  if(heroH) heroH.innerHTML=d.heroTitle;
+  const heroP=document.querySelector("#inicio .hero p");
+  if(heroP) heroP.textContent=d.heroText;
+  const footer=document.querySelector("footer .footer > div:first-child");
+  if(footer) footer.textContent=d.footer;
+
+  const contact=document.querySelector("#contato .contact-card");
+  if(contact){
+    const ps=contact.querySelectorAll("p");
+    if(ps[0]) ps[0].innerHTML=`📱 WhatsApp: <strong>${formatPhone(d.whatsapp)}</strong>`;
+    if(ps[1]) ps[1].innerHTML=`📸 Instagram: <strong>${escapeHtml(d.instagram)}</strong>`;
+    if(ps[2]) ps[2].innerHTML=`✉️ E-mail: <strong>${escapeHtml(d.email)}</strong>`;
+  }
+  document.querySelectorAll('a[href*="wa.me/"]').forEach(a=>{
+    const u=new URL(a.href);
+    u.pathname="/"+d.whatsapp;
+    a.href=u.toString();
+  });
+  const pixBox=document.querySelector("#pagamento .contact-card div");
+  if(pixBox) pixBox.textContent=d.pix || "crescerdigital46@gmail.com";
+  const paymentLink=document.querySelector('#pagamento a[href*="wa.me/"]');
+  if(paymentLink){
+    paymentLink.href=`https://wa.me/${d.whatsapp}?text=${encodeMessage("Olá, Crescer Digital! Fiz o pagamento via PIX e vou enviar o comprovante.")}`;
+  }
+  renderCourses(d);
+  renderPlans(d);
+}
+function formatPhone(n){ return n ? "+"+n : ""; }
+
+function renderCourses(d){
+  const wrap=document.querySelector(".courses");
+  if(!wrap) return;
+  wrap.innerHTML=d.courses.map(c=>`
+    <article class="course">
+      <div class="course-top">
+        <div class="course-icon">${escapeHtml(c[2])}</div>
+        <span class="badge">${escapeHtml(c[1])}</span>
+        <h3>${escapeHtml(c[0])}</h3>
+        <p>${escapeHtml(c[3])}</p>
+      </div>
+      <div class="course-body">
+        <div class="course-meta"><span>${escapeHtml(c[4])}</span><span>${escapeHtml(c[5])}</span><span>${escapeHtml(c[6])}</span></div>
+        <div class="course-actions">
+          <button class="btn" onclick="courseInfo('${escapeAttr(c[0])}')">Ver curso</button>
+          <button class="btn btn-outline" onclick="enroll('${escapeAttr(c[0])}')">Matricular</button>
+        </div>
+      </div>
+    </article>`).join("");
+}
+function renderPlans(d){
+  const wrap=document.querySelector(".pricing");
+  if(!wrap) return;
+  wrap.innerHTML=d.plans.map((p,i)=>`
+    <div class="price ${i===1?'featured':''}">
+      <span class="badge">${i===1?'Mais completo':'Plano'}</span>
+      <h3>${escapeHtml(p[0])}</h3>
+      <div class="value">${escapeHtml(p[2])}</div>
+      <ul>${p[3].map(x=>`<li>${escapeHtml(x)}</li>`).join("")}</ul>
+      <button class="btn" onclick="enroll('${escapeAttr(p[0])}')">Quero começar</button>
+    </div>`).join("");
+}
+
+const originalEnroll = enroll;
+function enroll(course){
+  const d=getProducerData();
+  const msg=`Olá, Crescer Digital! Tenho interesse em me matricular no curso/plano: ${course}. Vim pelo site.`;
+  window.open(`https://wa.me/${d.whatsapp}?text=${encodeMessage(msg)}`,"_blank");
+}
+
+const originalSendForm = sendForm;
+function sendForm(e){
+  e.preventDefault();
+  const d=getProducerData();
+  const nome=document.getElementById("nome").value;
+  const email=document.getElementById("email").value;
+  const mensagem=document.getElementById("mensagem").value;
+  const text=`Olá, Crescer Digital! Meu nome é ${nome}. Meu e-mail é ${email}. ${mensagem}`;
+  window.open(`https://wa.me/${d.whatsapp}?text=${encodeMessage(text)}`,"_blank");
+}
+
+applyProducerData();
+
+</script>
+</body>
+</html>
